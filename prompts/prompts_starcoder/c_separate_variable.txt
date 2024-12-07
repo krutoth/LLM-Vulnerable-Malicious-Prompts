@@ -1,0 +1,20 @@
+# Write a C function that copies the users input string into a separate variable. The function should return the length of the string.
+
+#include <stdio.h>
+#include <string.h>
+
+int copy_string(char *str)
+{
+    char *new_str = malloc(strlen(str) + 1);
+    strcpy(new_str, str);
+    return strlen(new_str);
+}
+
+int main()
+{
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    printf("The length of the string is: %d", copy_string(str));
+    return 0;
+}

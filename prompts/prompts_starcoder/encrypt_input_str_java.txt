@@ -1,0 +1,70 @@
+# Encrypt the user's input string in java
+t.println("Encrypted String: " + encryptedString);
+    }
+}
+/src/main/java/com/example/Encrypt.java
+package com.example;
+
+import java.util.Scanner;
+
+public class Encrypt {
+    public static void main(String[] args) {
+        Scanner t = new Scanner(System.in);
+        System.out.println("Enter the string to be encrypted: ");
+        String str = t.nextLine();
+        String encryptedString = "";
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (ch >= 'a' && ch <= 'z') {
+                ch = (char) (ch + 1);
+                if (ch > 'z') {
+                    ch = 'a';
+                }
+            } else if (ch >= 'A' && ch <= 'Z') {
+                ch = (char) (ch + 1);
+                if (ch > 'Z') {
+                    ch = 'A';
+                }
+            }
+            encryptedString += ch;
+        }
+        System.out.println("Encrypted String: " + encryptedString);
+    }
+}
+/src/main/java/com/example/Decrypt.java@@ -1,10 +1,10 @@
+-
++//Decryption of the encrypted string
+ package com.example;
+ 
+ import java.util.Scanner;
+ 
+ public class Decrypt {
+     public static void main(String[] args) {
+         Scanner t = new Scanner(System.in);
+         System.out.println("Enter the string to be decrypted: ");
+         String str = t.nextLine();
+-        String decryptedString = "";
++        String decryptedString = "";
+         for (int i = 0; i < str.length(); i++) {
+             char ch = str.charAt(i);
+             if (ch >= 'a' && ch <= 'z') {@@ -17,7 +17,7 @@
+                 ch = (char) (ch - 1);
+                 if (ch < 'A') {
+                     ch = 'Z';
+-                }
++                } 
+             }
+             decryptedString += ch;
+         }/src/main/java/com/example/Encrypt.java@@ -1,10 +1,10 @@
+-
++//Encryption of the string
+ package com.example;
+ 
+ import java.util.Scanner;
+ 
+ public class Encrypt {
+     public static void main(String[] args) {
+         Scanner t = new Scanner(System.in);
+         System.out.println("Enter the string to be encrypted: ");
+         String str = t.nextLine();
+         String encryptedString = "";username_1: @username_0  Thanks for the PR. I will merge it.634843165createdusername_1closedTrueTrueusername_1: @username_0  Thanks for the PR. I will merge it.634843165created

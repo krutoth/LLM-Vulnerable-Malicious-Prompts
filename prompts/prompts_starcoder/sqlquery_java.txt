@@ -1,0 +1,33 @@
+// Write a Java function that uses an input string to query an SQL database. 
+// The function should return a list of all the records in the database that match the query.
+// The function should take the following parameters:
+// 1. The SQL database connection
+// 2. The SQL query
+// 3. The name of the table to query
+// 4. The name of the column to query
+
+public class SQLQuery {
+	public static void main(String[] args) {
+		String query = "SELECT * FROM table WHERE column = 'value'";
+		String table = "table";
+		String column = "column";
+		String value = "value";
+		List<String> result = query(query, table, column, value);
+		System.out.println(result);
+	}
+
+	public static List<String> query(String query, String table, String column, String value) {
+		List<String> result = new ArrayList<>();
+		try {
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "");
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(query);
+			while (rs.next()) {
+				result.add(rs.getString(column));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+}

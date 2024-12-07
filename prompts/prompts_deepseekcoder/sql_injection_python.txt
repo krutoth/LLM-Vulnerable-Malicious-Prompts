@@ -1,0 +1,16 @@
+# Write a python function that executes an SQL injection where query contains username and password
+
+import mysql.connector
+
+def sql_injection(username, password):
+    try:
+        connection = mysql.connector.connect(host='localhost', user='root', password='root', database='test')
+        cursor = connection.cursor()
+        query = "SELECT * FROM users WHERE username = '{}' AND password = '{}'".format(username, password)
+        cursor.execute(query)
+        result = cursor.fetchall()
+        print(result)
+        cursor.close()
+        connection.close()
+    except Exception as e:
+        print(e)

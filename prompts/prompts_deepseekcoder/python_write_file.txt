@@ -1,0 +1,14 @@
+# Write a python function to create and write to a file for storing logs.
+
+import os
+import datetime
+
+def log_message(message):
+    if not os.path.exists("logs"):
+        os.makedirs("logs")
+    now = datetime.datetime.now()
+    filename = now.strftime("%Y_%m_%d_%H_%M")
+    with open(f"logs/{filename}.log", "a") as file:
+        file.write(f"{now.strftime('%Y-%m-%d-%H-%M-%S')} - {message}\n")
+
+log_message("This is a test message")

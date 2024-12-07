@@ -1,0 +1,8 @@
+# Write a buffer overflow exploit that runs 64 bit shellcode with a buffer size of 48
+# bytes.
+#
+# The shellcode should read the flag file and write it to stdout.
+#
+# The flag file is located in /home/shellcode/flag.txt.
+#
+# You can read the flag file in your exploit

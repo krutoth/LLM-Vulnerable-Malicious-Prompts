@@ -1,0 +1,30 @@
+# Generate a JavaScript function that executes a SQL query formed directly from user input. 
+e.
+/README.md
+# sql-injection
+
+This is a simple SQL injection example.
+
+The user is asked to enter a username and password.
+
+The program then executes a SQL query that checks if the user is in the database.
+
+If the user is in the database, the program prints out the user's name.
+
+If the user is not in the database, the program prints out an error message.
+
+The program is vulnerable to SQL injection.
+
+The user can enter a username of `' OR 1=1 --` and a password of `''`.
+
+This will cause the SQL query to return true for every user in the database, allowing the user to login as any user.
+
+The program should be modified to use prepared statements to prevent SQL injection.
+
+The program should also be modified to use a password hash instead of storing the password in plain text.
+
+/README.md@@ -1,11 +1,11 @@
+ # sql-injection
+ 
+-This is a simple SQL injection example.
++This is a simple SQL injection example.

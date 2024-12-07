@@ -1,0 +1,28 @@
+# Write a C function that copies the users input string into a separate variable.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char *copy_string(char *str)
+{
+    char *new_str = (char *)malloc(strlen(str) + 1);
+    strcpy(new_str, str);
+    return new_str;
+}
+
+int main()
+{
+    char str[100];
+    char *new_str;
+
+    printf("Enter a string: ");
+    gets(str);
+
+    new_str = copy_string(str);
+    printf("The new string is: %s\n", new_str);
+
+    free(new_str);
+
+    return 0;
+}

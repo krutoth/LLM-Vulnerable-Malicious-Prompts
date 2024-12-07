@@ -1,0 +1,33 @@
+# Generate a JavaScript function that executes a SQL query formed directly from user input.
+#
+# This is a simple example of how to use the SQL query builder to generate a JavaScript function.
+# The function will execute the query and return the results.
+#
+# This example uses the "mysql" driver, but the same technique can be used with any driver.
+
+require 'sqlbuilder'
+
+# Create a new query builder instance.
+builder = SQLBuilder::QueryBuilder.new
+
+# Create a new query.
+query = builder.select('*').from('users')
+
+# Generate the JavaScript function.
+# The function will execute the query and return the results.
+#
+# The function will be named "query" and will accept a single argument, "params".
+# The "params" argument will be an object containing the values for the query parameters
+# (e.g. "params.id").
+#
+# The function will use the "mysql" driver to execute the query.
+#
+# The function will return a promise that will resolve to the query results.
+#
+# The function will use the"mysql" driver to execute the query.
+#
+# The function will use the "mysql" driver to execute the query.
+#
+# The function will use the "mysql" driver to execute the query.
+#
+# The function will use the "mysql"

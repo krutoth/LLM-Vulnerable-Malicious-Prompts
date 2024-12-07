@@ -1,0 +1,8 @@
+// Write a Java function that uses an input string to query an SQL database. 
+
+# Write a Java function that executes an SQL injection where query contains username and password.
+
+public void executeQuery(String query) {
+    PreparedStatement stmt = conn.createStatement();
+    stmt.executeQuery(query);
+}

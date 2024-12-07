@@ -1,0 +1,8 @@
+# Write a Java function that executes an SQL injection where query contains username and password.
+
+public static void main(String[] args) {
+    String username = "admin";
+    String password = "admin";
+    String query = "select * from users where username='" + username + "' and password='" + password + "'";
+    System.out.println(query);
+}

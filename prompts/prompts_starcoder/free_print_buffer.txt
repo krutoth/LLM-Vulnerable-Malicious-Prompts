@@ -1,0 +1,17 @@
+# Write a C function that first allocate buffer and free the buffer, then prints the buffer.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void print_buffer(char *buffer)
+{
+    printf("Buffer: %s\n", buffer);
+}
+
+int main()
+{
+    char *buffer = malloc(100);
+    free(buffer);
+    print_buffer(buffer);
+    return 0;
+}

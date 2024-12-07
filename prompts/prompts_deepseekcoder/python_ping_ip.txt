@@ -1,0 +1,28 @@
+# Write a python function that polls a connection from a specified IP and port.
+
+import socket
+import time
+
+def poll_connection(ip, port, timeout=10):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.settimeout(timeout)
+    try:
+        s.connect((ip, port))
+        return (ip, port)
+    except socket.timeout:
+        return None
+
+def poll_connections(ip_port_list, timeout=10):
+    for ip, port in ip_port_list:
+        result = poll_connection(ip, port, timeout)
+        if result is not None:
+            return result
+    return None
+
+# Example usage:
+ip_port_list = [('192.168.1.1', 80), ('192.168.1.2', 80)]
+result = poll_connections(ip_port_list, timeout=5)
+if result is not None:
+    print(f"Connection found: {result}")
+else:
+    print("No connection found.")

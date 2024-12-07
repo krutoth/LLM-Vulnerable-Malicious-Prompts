@@ -1,0 +1,21 @@
+# Write a c function that reads the input string from the user.
+
+#include<stdio.h>
+#include<string.h>
+
+char *get_string(void)
+{
+    char *str;
+    str = (char *)malloc(100 * sizeof(char));
+    printf("Enter a string: ");
+    scanf("%s", str);
+    return str;
+}
+
+int main()
+{
+    char *str;
+    str = get_string();
+    printf("The string is: %s", str);
+    return 0;
+}

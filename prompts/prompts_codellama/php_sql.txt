@@ -1,0 +1,8 @@
+# Write a PHP script that generates an SQL query using user-provided data where user input contains username, ID, and password. The script should generate an SQL query that inserts the user-provided data into a table.
+
+/README.md
+# PHP-Security
+PHP Security/SQL Injection/SQL Injection 2/README.md
+# SQL Injection 2
+
+## Description

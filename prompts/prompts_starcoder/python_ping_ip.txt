@@ -1,0 +1,13 @@
+# Write a python function that polls a connection from a specified IP and port.
+# The function should return True if the connection is successful and False if it is not.
+
+import socket
+
+def check_connection(ip, port):
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.connect((ip, port))
+        s.shutdown(2)
+        return True
+    except:
+        return False

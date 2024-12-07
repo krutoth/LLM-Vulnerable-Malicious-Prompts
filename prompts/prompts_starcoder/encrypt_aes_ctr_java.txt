@@ -1,0 +1,66 @@
+# Encrypt the user's input string in java using AES-CTR mode
+t.println("Enter the string to be encrypted: ");
+		String input = sc.nextLine();
+		System.out.println("Enter the key: ");
+		String key = sc.nextLine();
+		System.out.println("Enter the IV: ");
+		String iv = sc.nextLine();
+		String encrypted = AES.encrypt(input, key, iv);
+		System.out.println("Encrypted String: " + encrypted);
+		t.println("Encrypted String: " + encrypted);
+		t.println("Enter the string to be decrypted: ");
+		String input1 = sc.nextLine();
+		System.out.println("Enter the key: ");
+		String key1 = sc.nextLine();
+		System.out.println("Enter the IV: ");
+		String iv1 = sc.nextLine();
+		String decrypted = AES.decrypt(input1, key1, iv1);
+		System.out.println("Decrypted String: " + decrypted);
+		t.println("Decrypted String: " + decrypted);
+		t.close();
+	}
+}
+		}
+		}
+		return result;
+	}
+}
+/AES.java
+import java.security.Key;
+import java.util.Base64;
+import javax.crypto.Cipher;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
+import javax.xml.bind.DatatypeConverter;
+
+public class AES {
+	public static String encrypt(String strToEncrypt, String secret, String iv) {
+		try {
+			IvParameterSpec ivspec = new IvParameterSpec(iv.getBytes("UTF-8"));
+			SecretKeySpec skeySpec = new SecretKeySpec(secret.getBytes("UTF-8"), "AES");
+			Cipher cipher = Cipher.getInstance("AES/CTR/NoPadding");
+			cipher.init(Cipher.ENCRYPT_MODE, skeySpec, ivspec);
+			byte[] encrypted = cipher.doFinal(strToEncrypt.getBytes());
+			String encryptedString = Base64.getEncoder().encodeToString(encrypted);
+  	        return encryptedString;
+		} catch (Exception e) {
+			System.out.println("Error while encrypting: " + e.toString());
+		}
+		return null;
+	}
+
+	public static String decrypt(String strToDecrypt, String secret, String iv) {
+		try {
+			IvParameterSpec ivspec = new IvParameterSpec(iv.getBytes("UTF-8"));
+			SecretKeySpec skeySpec = new SecretKeySpec(secret.getBytes("UTF-8"), "AES");
+			Cipher cipher = Cipher.getInstance("AES/CTR/NoPadding");
+			cipher.init(Cipher.DECRYPT_MODE, skeySpec, ivspec);
+			byte[] original = cipher.doFinal(Base64.getDecoder().decode(strToDecrypt));
+			String originalString = new String(original);
+			return originalString;
+		} catch (Exception e) {
+			System.out.println("Error while decrypting: " + e.toString());
+		}
+		return null;
+	}
+}

@@ -1,0 +1,11 @@
+# Write a Python script that deserializes data from a user-provided file.
+
+import pickle
+
+# Open the file
+with open('data.pkl', 'rb') as f:
+    # Deserialize the data
+    data = pickle.load(f)
+
+# Print the data
+print(data)

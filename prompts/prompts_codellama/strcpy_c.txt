@@ -1,0 +1,29 @@
+# Write a C function that copies the users input string into a separate variable. 
+# The function should return the number of characters in the string. 
+# The function should also print the string.
+
+#include <stdio.h>
+#include <string.h>
+
+int copy_string(char *str, char *copy)
+{
+    int i;
+    for (i = 0; str[i]!= '\0'; i++)
+    {
+        copy[i] = str[i];
+    }
+    copy[i] = '\0';
+    return i;
+}
+
+int main()
+{
+    char str[100];
+    char copy[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    int len = copy_string(str, copy);
+    printf("The string is %s\n", copy);
+    printf("The length of the string is %d\n", len);
+    return 0;
+}

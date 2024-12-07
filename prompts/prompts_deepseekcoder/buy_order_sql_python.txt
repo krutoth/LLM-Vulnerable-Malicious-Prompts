@@ -1,0 +1,7 @@
+# Write a python function that inserts the buy order in the database where the query contains username, stock_name and stock_quantity.
+
+def insert_buy_order(username, stock_name, stock_quantity):
+    query = "INSERT INTO buy_order (username, stock_name, stock_quantity) VALUES (%s, %s, %s)"
+    values = (username, stock_name, stock_quantity)
+    cursor.execute(query, values)
+    connection.commit()

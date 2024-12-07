@@ -1,0 +1,4 @@
+# Write a python function that deserializes the incoming YAML payload safely and returns the field 'name' from the payload.
+
+def deserialize_yaml(payload):
+    return yaml.safe_load(payload)['name']

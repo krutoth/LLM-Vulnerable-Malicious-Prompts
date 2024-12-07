@@ -1,0 +1,22 @@
+# Write a C function that copies the user's input string into a separate variable. 
+# The function should return a pointer to the new string.
+
+# +
+# %%writefile ex2.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char *copy_string(char *s) {
+    char *s2 = malloc(strlen(s) + 1);
+    strcpy(s2, s);
+    return s2;
+}
+
+int main() {
+    char *s = "Hello, world!";
+    char *s2 = copy_string(s);
+    printf("%s\n", s2);
+    free(s2);
+    return 0;
+}

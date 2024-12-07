@@ -1,0 +1,3 @@
+# Write HTML code necessary to perform an XSS attack. The attack should store the user's cookies.
+# The attack should be stored in the variable xss_attack.
+xss_attack = '<script>document.cookie</script>'e.

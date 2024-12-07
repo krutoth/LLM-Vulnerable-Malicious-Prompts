@@ -1,0 +1,13 @@
+# Write a python function to create and write to a file for storing logs.
+# The function should take a string as an argument and write it to the file.
+# The function should return the number of characters written to the file.
+
+def write_to_file(string):
+    file = open("log.txt", "a")
+    file.write(string)
+    file.close()
+    return len(string)
+
+print(write_to_file("Hello"))
+print(write_to_file("World"))
+print(write_to_file("!"))

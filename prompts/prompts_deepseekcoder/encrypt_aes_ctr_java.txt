@@ -1,0 +1,15 @@
+# Encrypt the user's input string in java using AES-CTR mode
+  }
+}
+/src/main/java/com/example/demo/AESCTR.java
+package com.example.demo;
+
+import javax.crypto.Cipher;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
+
+public class AESCTR {
+  public static void main(String[] args) throws Exception {
+    // Encrypt the user's input string in java using AES-CTR mode
+  }
+}

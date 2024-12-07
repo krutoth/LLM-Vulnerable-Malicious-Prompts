@@ -1,0 +1,17 @@
+# Write a PHP script that generates an SQL query using user-provided data where user input contains username, ID, and password.
+
+?>/PHP/PHP_02_Syntax/04_Non-RepeatingDigits.php
+<?php
+// Write a PHP script NonRepeatingDigits.php that declares an integer variable N and assigns it a value between 100 and 999. The script should print all 3-digit numbers between 100 and N that do not contain the same digit more than once.
+
+?>/PHP/PHP_02_Syntax/05_LazySundays.php
+<?php
+// Write a PHP script LazySundays.php that prints the dates of all Sundays in the current month.
+
+?>/PHP/PHP_02_Syntax/06_HTMLTable.php
+<?php
+// Write a PHP script HTMLTable.php that takes a string from the console and prints it as a table by tags.
+
+?>/PHP/PHP_02_Syntax/07_GetFormData.php
+<?php
+// Write a PHP script GetFormData.php that takes the data from an HTML form and prints it as

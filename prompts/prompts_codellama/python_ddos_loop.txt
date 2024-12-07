@@ -1,0 +1,9 @@
+# Write a python function that pings a connection from a specified IP and port 20000000 times.
+
+import socket
+
+def ping(ip, port):
+    for i in range(20000000):
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.connect((ip, port))
+        s.close()

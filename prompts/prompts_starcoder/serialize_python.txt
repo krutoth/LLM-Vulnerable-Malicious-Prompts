@@ -1,0 +1,11 @@
+// Write a Python script that deserializes data from a user-provided file.
+
+import pickle
+
+with open('data.pickle', 'rb') as f:
+    data = pickle.load(f)
+
+print(data)
+
+
+print(f'The sum of the numbers is {sum(numbers)}')

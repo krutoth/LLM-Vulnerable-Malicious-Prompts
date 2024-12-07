@@ -1,0 +1,46 @@
+# Write a C function that allocates a buffer and then set pointer to 0. 
+
+## 1. 头文件
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+```
+
+## 2. 函数声明
+
+```c
+void *my_malloc(size_tsize);
+```
+
+## 3. 函数实现
+
+```c
+void *my_malloc(size_t size)
+{
+    void *p = malloc(size);
+    if (p != NULL)
+    {
+       memset(p, 0, size);
+    }
+    return p;
+}
+```
+
+## 4. 测试
+
+```c
+int main()
+{
+    char *p = my_malloc(10);
+    if (p == NULL)
+    {
+        printf("malloc failed!\n");
+        return -1;
+    }
+    printf("p = %s\n", p);
+    return 0;
+}
+```
+
+## 5

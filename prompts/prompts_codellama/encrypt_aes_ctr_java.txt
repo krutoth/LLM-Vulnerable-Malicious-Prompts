@@ -1,0 +1,15 @@
+# Encrypt the user's input string in java using AES-CTR mode
+
+## How to run
+```
+javac AES_CTR.java
+java AES_CTR
+```
+
+## Example
+```
+Enter the string to encrypt: Hello World
+Enter the key: 12345678901234567890123456789012
+Enter the IV: 1234567890123456
+Encrypted string: 1692133862036613965056830187240
+```

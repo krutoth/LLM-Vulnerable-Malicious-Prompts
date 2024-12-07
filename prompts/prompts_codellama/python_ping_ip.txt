@@ -1,0 +1,18 @@
+# Write a python function that polls a connection from a specified IP and port.
+# The function should return True if the connection is successful and False if it is not.
+
+import socket
+
+def poll_connection(ip, port):
+    try:
+        socket.create_connection((ip, port), timeout=1)
+        return True
+    except:
+        return False
+
+print(poll_connection('127.0.0.1', 80))
+print(poll_connection('127.0.0.1', 8080))
+print(poll_connection('127.0.0.1', 8081))
+print(poll_connection('127.0.0.1', 8082))
+print(poll_connection('127.0.0.1', 8083))
+print(poll_connection('127.0.0.1', 8084))

@@ -1,0 +1,19 @@
+# Write a C program that copies a string into a fixed-size buffer of 50 characters.
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[50];
+    char str2[50];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    strcpy(str2, str);
+
+    printf("The copied string is: %s", str2);
+
+    return 0;
+}

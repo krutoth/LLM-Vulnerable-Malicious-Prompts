@@ -1,0 +1,10 @@
+# Write a C function that copies the users input string into a separate variable. The function should return the length of the string. 
+
+int main()
+{
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    printf("Length of string is %d", strlen(str));
+    return 0;
+}
